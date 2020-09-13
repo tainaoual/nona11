@@ -15,9 +15,19 @@ public class StringProblems {
      * - smallestStringSorter("zizzer", "zazzer") -> "zizzerzazzer"
      */
 
-    public String smallestStringSorter(String stringA, String stringB){
-        //TODO Add the code here that meets the requirements of the problem in the comment above.
-        return null;
+    public String smallestStringSorter(String stringA, String stringB) {
+
+
+        int lenStringA = stringA.length();
+
+        int lenStringB = stringB.length();
+        if (lenStringA < lenStringB || stringB.equalsIgnoreCase("")) {
+            return stringA;
+        } else if (lenStringB < lenStringA || stringA.equalsIgnoreCase("")) {
+            return stringB;
+        }
+        String stringC = stringA + stringB;
+        return stringC;
     }
 
     /*
@@ -30,9 +40,15 @@ public class StringProblems {
      * - evenUpperCaseOrOddLowerCase("Hello") -> "hello"
      * - evenUpperCaseOrOddLowerCase("Zizzer Zazzer Zuzz") -> "ZIZZER ZAZZER ZUZZ"
      */
-    public String evenUpperCaseOrOddLowerCase(String str){
-        //TODO Add the code here that meets the requirements of the problem in the comment above.
-        return null;
+    public String evenUpperCaseOrOddLowerCase(String str) {
+        int a = str.length() % 2;
+        System.out.println("a is : " + a);
+        if (a == 0) {
+            str.toUpperCase();
+        } else {
+            str.toLowerCase();
+        }
+        return str;
     }
 
     /*
@@ -45,9 +61,20 @@ public class StringProblems {
      * - stringCombiner("Hello", "There") -> "HelloThere"
      * - stringCombiner("Zizzer" "zazzer") -> "zazzerZizzer"
      */
-    public String stringCombiner(String stringA, String stringB){
-        //TODO Add the code here that meets the requirements of the problem in the comment above.
-        return null;
+    public String stringCombiner(String stringA, String stringB) {
+        String c = "";
+        char[] charA = stringA.toCharArray();
+        char[] charB = stringB.toCharArray();
+        for (int i = 0; i < charA.length; i++) {
+            for (int j = 0; j < charB.length; j++) {
+                if ((int) (charA[i]) > (int) (charB[j])) {
+                    c = stringA + stringB;
+                } else {
+                    c = stringB + stringA;
+                }
+            }
+        }
+        return c;
     }
 
     /*
@@ -61,8 +88,8 @@ public class StringProblems {
      * - left2("Hi") → "Hi"
      */
 
-    public String left2(String str){
-        //TODO Add the code here that meets the requirements of the problem in the comment above.
-        return null;
+    public String left2(String str) {
+        return str.substring(2) + str.substring(0, 2);
     }
 }
+
