@@ -47,5 +47,4 @@ class StringProblemsTest {
                 () -> assertThat(underTest.left2("java")).isEqualTo("vaja"),
                 () -> assertThat(underTest.left2("Hi")).isEqualTo("Hi")
         );
-    }
-}
+    }}

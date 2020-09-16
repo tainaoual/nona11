@@ -1,13 +1,10 @@
 package org.wcci;
 
-import com.sun.jdi.connect.Connector;
+import java.io.Serializable;
+import java.util.Locale;
 
-import javax.print.DocFlavor;
-import java.lang.invoke.StringConcatException;
+public class StringProblems {
 
-public class StringProblems<lenStringA, lenStringB> {
-    private Object StringA;
-    private String StringC;
 
 
     /*
@@ -23,42 +20,28 @@ public class StringProblems<lenStringA, lenStringB> {
      * - smallestStringSorter("zizzer", "zazzer") -> "zizzerzazzer"
      */
 
-    public String smallestStringSorter(String stringA, String stringB) {
+    public Serializable smallestStringSorter(String stringA, String stringB) {
 
 
         int StringA = stringA.length();
         int StringB = stringB.length();
         int StringC = (StringB + StringA);
-        if (StringA < StringB) ;
-        {
+        if (StringB > StringA) {
 
-            return StringA();
-
-
+            return StringA;
         }
-        if (StringB == StringA) ;
-        {
-
-            return StringC();
+        if (StringB == StringA) {
+            System.out.println(StringA == StringB);
         }
-        if ((StringA & StringB) == 0) ;
-        {
-            return stringB();
-
+        if (StringA == 0) {
+            return stringB;
         }
+//        if (StringB == 0) {
+        return StringA;
 
+//        }
 
     }
-
-    private String stringB() {
-    }
-
-    private String StringC() {
-    }
-
-    private String StringA() {
-    }
-
 
     /*
      * evenUpperCaseOrOddLowerCase()
@@ -71,64 +54,59 @@ public class StringProblems<lenStringA, lenStringB> {
      * - evenUpperCaseOrOddLowerCase("Zizzer Zazzer Zuzz") -> "ZIZZER ZAZZER ZUZZ"
      */
     public String evenUpperCaseOrOddLowerCase(String str) {
+
         int a = str.length() % 2;
-        if (a == 0) ;
-        {
-            return str.toUpperCase();
-
+        System.out.println("a is : " + a);
+        if (a == 0) {
+            str.toUpperCase();
+        } else {
+            str.toLowerCase();
         }
-        if (a < 0) ;
-        {
-            return str.toLowerCase();
+        return str;
+    }
+    /*
+     * stringCombiner()
+     *
+     * Given two strings, stringA and stringB, return a new string that combines the two strings, but the strings should
+     * be combined in ascending alphabetically order.
+     *
+     * Examples:
+     * - stringCombiner("Hello", "There") -> "HelloThere"
+     * - stringCombiner("Zizzer" "zazzer") -> "zazzerZizzer"
+     */
+
+    public String stringCombiner(String stringA, String stringB) {
+        String c = "";
+        char[] charA = stringA.toCharArray();
+        char[] charB = stringB.toCharArray();
+        for (int i = 0; i < charA.length; i++) {
+            for (int j = 0; j < charB.length; j++) {
+                if ((int) (charA[i]) > (int) (charB[j])) {
+                    c = stringA + stringB;
+                } else {
+                    c = stringB + stringA;
+
+                }
+            }
         }
+        return c;
+
+    }
+    /*
+     * left2()
+     * Given a string, str, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length
+     * will be at least 2.
+     *
+     * Examples:
+     * - left2("Hello") → "lloHe"
+     * - left2("java") → "vaja"
+     * - left2("Hi") → "Hi"
+
+     */
 
 
-
-        /*
-         * stringCombiner()
-         *
-         * Given two strings, stringA and stringB, return a new string that combines the two strings, but the strings should
-         * be combined in ascending alphabetically order.
-         *
-         * Examples:
-         * - stringCombiner("Hello", "There") -> "HelloThere"
-         * - stringCombiner("Zizzer" "zazzer") -> "zazzerZizzer"
-         */
-
-        public String left String StringB;StringA(StringA , StringB){
-
-            String stringA;
-            String sttrngB;
-            System.out.println("StringA + StringB");
-            StringC = StringA + StringB;
-
-            return StringC.substring(stringA.length() + StringB.length()) + StringC.substring();
-
-        }
-
-
-
-
-
-
-
-
-        /*
-         * left2()
-         * Given a string, str, return a "rotated left 2" version where the first 2 chars are moved to the end. The string length
-         * will be at least 2.
-         *
-         * Examples:
-         * - left2("Hello") → "lloHe"
-         * - left2("java") → "vaja"
-         * - left2("Hi") → "Hi"
-         */
-
-        public String left2 (String str){
-            return str.substring(2) + str.substring(0, 2);
-        }
+    public String left2(String str) {
+        return str.substring(2) + str.substring(0, 2);
     }
 
-    private void StringA(Object stringA, String stringB) {
-    }
-
+}
